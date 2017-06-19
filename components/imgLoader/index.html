@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>图像加载进度条</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/min/?f=/components/style.css">
+    <style>
+        @-webkit-keyframes rotate-loading {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes rotate-loading {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        
+        @-webkit-keyframes loading-text-opacity {
+            0%, 20% {
+                opacity:rgba(255,255,255,0)
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                opacity:rgba(255,255,255,0)
+            }
+        }
+        
+        @keyframes loading-text-opacity {
+            0%, 20% {
+                opacity:rgba(255,255,255,0)
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                opacity:rgba(255,255,255,0)
+            }
+        }
+        html,body { height:100%; }
+        .loading,
+        .loading-container {
+            height: 100px;
+            position: relative;
+            width: 100px;
+            border-radius: 100%
+        }
+        
+        .loading-container {
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin:-50px 0 0 -50px;
+        }
+        
+        .loading {
+            border: 2px solid transparent;
+            border-color: transparent #fff transparent #FFF;
+            -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+            -webkit-transform-origin: 50% 50%;
+            animation: rotate-loading 1.5s linear 0s infinite normal;
+            transform-origin: 50% 50%
+        }
+        
+        .loading-container:hover .loading {
+            border-color: transparent #E45635
+        }
+        
+        .loading-container .loading,
+        .loading-container:hover .loading {
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out
+        }
+        
+        #loading-text {
+            -webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
+            animation: loading-text-opacity 2s linear 0s infinite normal;
+            color: #fff;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            margin-top: 45px;
+            opacity:rgba(255,255,255,0);
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            top: 0;
+            width: 100px
+        }
+    </style>
+    <script src="http://imoney.w3cmm.com/1.1.0/imoney.min.js"></script>
+</head>
+<body style="background:#000;">
+    <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-text">loading</div>
+    </div>
+    <script>
+        $.require(['imgLoader'],function(Loader){
+            var Loader = new Loader();
+            var manifest = ['http://static.paipaiimg.com/fd/qqpai/book/book_promotion/img/music.png','https://img.alicdn.com/imgextra/i4/373327370/TB2Oh2qdVXXXXbxXXXXXXXXXXXX_!!373327370.jpg_q90.jpg','https://img.alicdn.com/tps/i2/TB1mx7JIFXXXXXJXXXXgalVIXXX-810-480.jpg','https://img.alicdn.com/tps/i2/TB1Pv3pIFXXXXcSaXXXgalVIXXX-810-480.jpg'];
+            Loader.init(manifest, function(){
+                console.log("start")
+            }, 10000 );
+            Loader.onFileLoad = function(e){ 
+                console.log( e.target );
+                document.getElementById("loading-text").innerHTML = ((Loader.loadCount / Loader.maxLoadCount)*100).toFixed(0)+'%';
+            };
+            Loader.onComplete = function(e){ 
+                console.log("complete");
+                //loaderComplete();
+            };
+            Loader.onFileError = function(e){ 
+                console.log("error"+e.target);
+            };
+            Loader.onTimeout = function(e){ 
+                console.log("timeout");
+                alert("您的网速过慢建议在Wifi下浏览，或刷新尝试");
+            };
+            Loader.loadAll();
+
+        })
+    </script>
+</body>
+</html>

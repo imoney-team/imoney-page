@@ -1,93 +1,283 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8" />
-<title>iMoney.js</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8"/>
+    <title>iMoney.js</title>
+    <link rel="stylesheet" type="text/css" href="build/style.min.css">
+    <script src="build/imoney.min.js"></script>
 </head>
+
 <body>
 <div class="wrap">
     <div class="columns">
-        <div class="main">
-            <div class="stage stage-init">
-                <h2>iMoney</h2>
-                <p><a href="https://github.com/stormtea123/iMoney.git">https://github.com/stormtea123/iMoney.git</a></p>
-                <p>iMoney.js的目标是对jQuery用require.js的方法进行拆分，默认会加载dom/node/event模块，ajax/ua/promise/mvc等模块选择行加载，后期会集成一些数据模拟、数据绑定等功能。</p>
-                <p>简单的说，iMoney.js的未来是一根线，把一个个干货串联起来。</p>
-                <p>iMoney.js目前还处在萌芽期，仅供自己锻炼和尝试。</p>
-                <div class="github-widget" data-repo="stormtea123/iMoney"></div>
-            </div>
-            <div class="stage">
-                <h2><a href="https://github.com/stormtea123/iMoney/tree/1.0.0" target="_blank">V1.0</a></h2>
-                <p>根据《JavaScript DOM高级程序设计》、《JavaScript 高级程序设计》，整合编写</p>
-                <ul>
-                    <li><strong>$</strong>选择器</li>
-                    <li><strong>getElementsByClassName</strong>选择类</li>
-                    <li><strong>setStyleById</strong>通过ID修改单个元素的样式</li>
-                    <li><strong>setStylesByClassName</strong>通过类名修改多个元素的样式</li>
-                    <li><strong>setStylesByTagName</strong>通过标签名修改元素的样式</li>
-                    <li><strong>getClass</strong>取得包含元素类名的数组</li>
-                    <li><strong>hasClass</strong>检查元素中是否存在某个类</li>
-                    <li><strong>addClass</strong>为元素添加类</li>
-                    <li><strong>removeClass</strong>从元素删除类</li>
-                    <li><strong>addStylesSheet</strong>添加样式表</li>
-                    <li><strong>removeStyleSheet</strong>移除样式表</li>
-                    <li><strong>getStyleSheets</strong>通过URL取得包含所有样式的数组</li>
-                    <li><strong>getStyle</strong>获取元素的样式</li>
-                    <li><strong>toggleDisplay</strong>切换显示</li>
-                    <li><strong>insertAfter</strong>在后面插入节点</li>
-                    <li><strong>removeChildren</strong>移除节点</li>
-                    <li><strong>prependChild</strong>在前面插入节点</li>
-                    <li><strong>camelize</strong>把word-word转换成wordWord</li>
-                    <li><strong>uncamelize</strong>把wordWord转换成word-word</li>
-                    <li><strong>addHandler</strong>绑定事件</li>
-                    <li><strong>removeHandler</strong>移除事件</li>
-                    <li><strong>getEvent</strong>获取事件</li>
-                    <li><strong>getTarget</strong>获取事件对象</li>
-                    <li><strong>preventDefault</strong>阻止默认事件</li>
-                    <li><strong>stopPropagation</strong>阻止冒泡</li>
-                    <li><strong>addLoadEvent</strong>load事件</li>
-                    <li><strong>getBrowserWindowSize</strong>获取浏览器窗口大小</li>
-                    <li><strong>getPointerPositionInDocument</strong>获取鼠标的位置坐标</li>
-                    <li><strong>getRelatedTarget</strong>相关元素</li>
-                    <li><strong>getButton</strong>获取鼠标按键</li>
-                    <li><strong>getCharCode</strong>键盘编码</li>
-                    <li><strong>getWheelDelta</strong>鼠标滚轮事件</li>
-                    <li><strong>getKeyPressed</strong>键盘命令</li>
-                    <li><strong>getClipboardText</strong>获取剪贴板内容</li>
-                    <li><strong>setClipboardText</strong>设置剪贴板内容</li>
-                    <li><strong>serialize</strong>序列化表单</li>
-                    <li><strong>parseXml</strong>解析XML</li>
-                    <li><strong>selectSingleNode</strong>XPath，找到匹配的节点时返回第一个</li>
-                    <li><strong>selectNodes</strong>XPath，返回与模式匹配的所有节点</li>
-                    <li><strong>serializeXml</strong>序列化XML</li>
-                    <li><strong>transform</strong>XSLT文档形式转换</li>
-                    <li><strong>createXHR</strong>创建XHR</li>
-                    <li><strong>parseJSON</strong>解析JSON</li>
-                    <li><strong>getCookie</strong>获取cookie</li>
-                    <li><strong>setCookie</strong>设置cookie</li>
-                    <li><strong>unsetCookie</strong>删除cookie</li>
-                    <li>……</li>
-                </ul>
-            </div>
-        </div>
         <div class="side">
             <div id="site-title">
-                <h1>iMoney.js</h1>
+                <h1><img src="build/images/logo.png" alt="" width="100" height="100"></h1>
                 <p class="site-summary">JavaScript iMoney库</p>
             </div>
             <div class="nav">
                 <ul>
-                    <li><a href="#">iMoney</a></li>
-                    <li><a href="https://github.com/stormtea123/iMoney/tree/1.0.0" target="_blank">V1.0</a></li>
-                    <li><a href="https://github.com/stormtea123/iMoney" target="_blank">v1.1</a></li>
+                    <li><a href="https://github.com/stormtea123/iMoney.git">github</a></li>
+                    <li><a href="components">组件中心</a></li>
+                    <li><a href="#">event</a></li>
+                    <li><a href="#">cookie</a></li>
+                    <li><a href="#">ajax</a></li>
+                    <li><a href="#">form</a></li>
                 </ul>
+            </div>
+        </div>
+        <div class="main" id="main">
+            <div class="main-bd">
+                <h1>iMoney</h1>
+                <p>iMoney.js是一个移动端基础脚本框架，拥有卓越的性能，优雅的API(<a href="https://github.com/stormtea123/iMoney">View on
+                    GitHub</a>)</p>
+                <p><img src="build/images/iMoney.jpg" alt="" width="600" height="274"></p>
+                <h2>安装</h2>
+                <pre>npm install imoney</pre>
+                <h2>快速上手</h2>
+                <pre>&lt;div id="result"&gt;&lt;/div&gt;</pre>
+                <pre>import $ form "imoney";
+
+var $result = $("#result");
+$result.attr({
+    title:"This is a title"
+});
+$result.html("&lt;p&gt;Hello World&lt;/p&gt;") ;</pre>
+                <h2>基础方法</h2>
+                <pre>
+//选择id为main的元素
+$("#main")
+//选择class为main的元素
+$(".main")
+//选择所有的span元素
+$("span")
+//返回所有span元素的第2个DOM对象
+$("span").get(1)
+//选择id为main的元素的所有span元素
+$("#main").find("span")
+//first
+$("#main").find("span").first()
+//last
+$("#main").find("span").last()
+//eq
+$("#main").find("span").eq(0)
+//map
+$("#main").find("span").map(function(i,element){})
+//是否包行指定样式
+$("#main").hasClass(".demo");
+//增加样式
+$("#main").addClass(".demo")
+//移除样式
+$("#main").removeClass(".demo")
+//操作样式
+$("#main").css(["width","height"]);
+$("#main").css("width":"100px");
+$("#main").css({width:"100px",height:"100px"})
+//获取属性
+$("#main").attr("title")
+//设置属性
+$("#main").attr("title","标题")
+//移除属性
+$("#main").removeAttr("title")
+//设置data
+$("#main").data("size","10")
+//获取data
+$("#main").data("size")
+//插入文字
+$("#main").html("文字")
+//开始标签之前插入
+$("#main").before("before");
+//开始标签之后插入
+$("#main").prepend("prepend");
+//结束标签之前插入
+$("#main").append("append");
+//结束标签之后插入
+$("#main").after("after");
+//子节点
+$("#main").children();
+//类名为item的子节点
+$("#main").children(".item");
+//清空子节点
+$("#main").empty();
+//移除
+$("#main").remove();
+//json转化成对象
+$.parseJSON()
+//把对象转化为JSON字符串
+$.stringifyJSON({name:"张三"});
+//是否数组
+$.isArray()
+//是否数组中的项
+$.inArray()
+//是否document对象
+$.isDocument()
+//是否window对象
+$.isWindow()
+//判断是否是数字
+$.isNumeric()
+$.type()
+//是否普通的对象
+$.isPlainObject()
+//是否空对象
+$.isEmptyObject()
+//each
+$.each(obj,function(){i,element})
+//取时间戳
+$.now()
+</pre>
+                <h2>表单</h2>
+                <pre>
+//序列化表单数据
+var data = $("#login").serialize();
+console.log(data);
+</pre>
+                <h2>事件</h2>
+                <pre>$result = $("#result");
+var i = 0;
+//绑定命名空间
+$result.on("touchstart.name", function() {
+    i++;
+    if (i >= 2) {
+        //基于命名空间移除事件
+        $result.off("name");
+    }
+    console.log("iMoney.js");
+});
+//绑定事件
+$result.on("touchend", function() {
+    //移除事件
+    $result.off("touchend");
+    console.log("--touchend");
+});
+</pre>
+                <h2>cookie</h2>
+                <pre>
+//添加cookie
+$.cookie("name","iMoney");
+console.log($.cookie());
+//移除cookie
+$.removeCookie("name");
+console.log($.cookie());
+</pre>
+                <h2>ajax</h2>
+                <h3>get请求</h3>
+                <pre>
+$.ajax({
+    url: "jsonp.php",
+    type: "get",
+    data: {
+        name: "iMoney"
+    },
+    success: function(data) {
+        console.log(data)
+    }
+});
+</pre>
+                <h3>post请求</h3>
+                <pre>
+$.ajax({
+    url: "jsonp.php",
+    type: "post",
+    data: {
+        name: "iMoney"
+    },
+    success: function(data) {
+        console.log(data)
+    }
+});
+</pre>
+                <h3>jsonp请求</h3>
+                <pre>
+$.ajax({
+    dataType: "jsonp",
+    url: "jsonp.php",
+    type: "get",
+    data: {
+        name: "iMoney"
+    },
+    success: function(data) {
+        console.log(data)
+    }
+});
+</pre>
+                <h2>模块化</h2>
+                <pre>import 'imoney/src/module';</pre>
+                <h3>配置</h3>
+                <p><code>$.config(object)</code>,object有4个可选参数如下：</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>参数</th>
+                        <th>描述</th>
+                        <th>默认值</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>waitSeconds</td>
+                        <td>设置认为模块加载失败的秒数</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>baseUrl</td>
+                        <td>基础路径</td>
+                        <td>'./'</td>
+                    </tr>
+                    <tr>
+                        <td>paths</td>
+                        <td>映射那些不直接放置于baseUrl下的模块名</td>
+                        <td>{}</td>
+                    </tr>
+                    <tr>
+                        <td>urlArgs</td>
+                        <td>url参数，例如时间戳、查询参数</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>例如：</p>
+                <pre>
+$.config({
+    //基础路径
+    baseUrl:'module/'
+})
+</pre>
+                <h3>定义模块</h3>
+                <p>例如：新建<code>module.js</code>，<code>module.js</code>依赖<code>run.js</code>，则</p>
+                <pre>
+//module.js
+$.define(["run"],function(run) {
+    console.log("module");
+    return {
+        color: "red",
+        size: "unisize"
+    }
+});
+</pre>
+                <h3>使用模块</h3>
+                <p>例如：依赖<code>module.js</code>，</p>
+                <pre>
+$.require(["module"],function(module){
+    console.log(module.color+'----'+module.size)
+})
+</pre>
             </div>
         </div>
     </div>
 </div>
-<script src="http://libs.baidu.com/jquery/1.8.0/jquery.js"></script> 
-<script type="text/javascript" src="jquery.githubRepoWidget.min.js"></script>
-<div style="display:none;"><script src="http://s20.cnzz.com/stat.php?id=3969203&web_id=3969203" language="JavaScript"></script></div>
+</div>
+<div style="display:none;">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?35561d205ceb3f5eba4fabcb20033251";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</div>
 </body>
+
 </html>

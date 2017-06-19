@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>touchPage</title>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        * { -webkit-tap-highlight-color: transparent; outline: 0; }
+        body, dl, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin:0; padding:0 }
+        h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:500 }
+        html { min-height:100%; color:#666; background:#fafafa }
+        body { font:12px/1.5 "Hiragino sans gb",'Helvetica neue','Helvetica',Tahoma,"Microsoft YaHei"; -webkit-user-select: none; user-select: none; }
+        button, input, select, textarea { font-family: "Hiragino sans gb",'Helvetica neue','Helvetica',Tahoma,"Microsoft YaHei";  overflow:visible; }
+        ol, ul { list-style:none }
+        ins, a { text-decoration:none; color:#666; }
+        img { border: none; vertical-align:top; }
+        .ui-wrap { max-width:640px; min-width:320px; margin:0 auto; }
+        .ui-clear:before, .ui-clear:after { display:table; content:"" }
+        .ui-clear:after { clear:both }
+        /*nav*/
+        .ui-nav { height:40px; overflow:hidden; background:#fff; }
+        .ui-nav-fix { position:relative; z-index:1; padding-bottom:10px; }
+            .ui-nav-list { position:relative; z-index:1; }
+                .ui-nav-item { float:left; position:relative; z-index:1; }
+                    .ui-nav-item.active:after { position:absolute; left:0; right:1px; bottom:0; z-index:0; border-bottom:solid 2px #e63629; content:""; }
+                        .ui-nav-link { display:block; position:relative; z-index:1; height:14px; padding:13px 0;  font-size:14px; line-height:1;  }
+                        .ui-nav-item.active .ui-nav-link { color:#e04241; }
+                            .ui-nav-txt { padding:0 23px; border-right:solid 1px #dedede; }
+                            .ui-nav-item:last-child .ui-nav-txt { border-right:0; }
+                       
+                .ui-nav-item.ui-nav-award { color:#e63629; }
+                .ui-nav-item.ui-nav-award .ui-nav-txt { padding-right:30px;}
+                .ui-nav-item.ui-nav-award .ui-nav-link:after { position:absolute; right:13px; top:12px; z-index:1; width:13px; height:13px; text-align:center; line-height:13px; color:#fff; background:#e63629; border-radius:2px; font-size:10px; content:"奖"; }
+    </style>
+    <script src="http://imoney.w3cmm.com/1.1.0/imoney.min.js"></script>
+    </head>
+<body>
+    <!--S 公用模块 -->
+    <nav class="ui-nav" id="ui-nav">
+        <div class="ui-nav-fix">
+            <ul class="ui-clear ui-nav-list">
+                <li class='ui-nav-item ui-nav-award active'>
+                    <a class="ui-nav-link" href="javascript:;">
+                        <span class="ui-nav-txt">第一个导航</span>
+                    </a>
+                </li>
+                <li class='ui-nav-item ui-nav-award'>
+                    <a class="ui-nav-link" href="javascript:;">
+                        <span class="ui-nav-txt">导航二</span>
+                    </a>
+                </li>
+                <li class='ui-nav-item'>
+                    <a class="ui-nav-link" href="javascript:;">
+                        <span class="ui-nav-txt">导航三</span>
+                    </a>
+                </li>
+                <li class='ui-nav-item'>
+                    <a class="ui-nav-link" href="javascript:;">
+                        <span class="ui-nav-txt">导航四</span>
+                    </a>
+                </li>
+                <li class='ui-nav-item'>
+                    <a class="ui-nav-link" href="javascript:;">
+                        <span class="ui-nav-txt">最后一个导航</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--E 公用模块 -->
+    <script>
+    //还不够完美
+    $.require(["./nav"],function(Nav){
+        new Nav("#ui-nav",{
+            onChange:function(i){
+                console.log(i);
+            }
+        });
+    })
+    </script>
+</body>
+</html>

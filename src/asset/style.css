@@ -23,3 +23,12 @@ img { border: none; vertical-align:top; }
 .hero h2 { font-size:16px; text-transform:uppercase; text-align:center; }
 /*==*/
 .footer { padding:2em 0; text-align:center; font-size:15px; color:#999; }
+/*==*/
+@media (max-width: 960px) {
+    .container { padding-top:0; }
+    .header { position:relative; height:auto; }
+    .nav { display:flex; justify-content: center; align-items: center; width:100%; }
+    .nav-internal { display:flex; flex-wrap:wrap; }
+    .nav-external { position:absolute; right:10px; top:0; }
+    .nav li>a { padding: 0 5px; }
+}

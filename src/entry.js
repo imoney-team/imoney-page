@@ -29,8 +29,10 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="hero">
-                    <h1>iMoney</h1>
-                    <h2>A JavaScript library for building user interfaces</h2>
+                    <div className="ui-w">
+                        <h1>iMoney</h1>
+                        <h2>A JavaScript library for building user interfaces</h2>
+                    </div>
                 </div>
                 <div className="footer">
                     <p>Copyright © 2017 <a href="https://www.w3cmm.com/">w3cmm.com</a>.</p>

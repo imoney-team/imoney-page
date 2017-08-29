@@ -57,7 +57,9 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: "style-loader!css-loader"
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader'
+                })
             },
             {
                 test: /\.json$/,
@@ -68,7 +70,7 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015']
+                        presets: ['es2015','react']
                     }
                 }]
 

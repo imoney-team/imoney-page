@@ -21,7 +21,14 @@ module.exports = {
             filename: 'index.html',
             template: './src/asset/index.html',
             favicon: './src/asset/favicon.ico',
-            hash:true
+            hash:true,
+            minify: {
+                minifyCSS: true,
+                minifyJS: true,
+                removeComments: true,
+                keepClosingSlash: true,
+                collapseWhitespace: true
+            }
         }),
 
         new webpack.DefinePlugin({

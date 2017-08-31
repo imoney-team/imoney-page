@@ -26,7 +26,8 @@
   "homepage": "https://github.com/imoney-team/imoney-react#readme",
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",

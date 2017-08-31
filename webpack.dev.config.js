@@ -9,8 +9,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     name: "dev",
+    devtool:"source-map",
     entry: {
-        app: [path.join(__dirname, "src", "entry.js")]
+        app: [path.join(__dirname, "src", "entry.js")],
+        demo: [path.join(__dirname, "src", "demo.js")]
     },
     output: {
         path: path.resolve(__dirname, "dev"),
@@ -32,9 +34,23 @@ module.exports = {
             filename: 'index.html',
             template: './src/asset/index.html',
             favicon: './src/asset/favicon.ico',
-            hash:true
+            hash:true,
+            excludeChunks: ['demo']
         }),
-
+        new HtmlWebpackPlugin({
+            filename: 'demo.html',
+            template: './src/asset/demo.html',
+            favicon: './src/asset/favicon.ico',
+            hash:true,
+            excludeChunks: ['app']
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: function (module) {
+                // this assumes your vendor imports exist in the node_modules directory
+                return module.context && module.context.indexOf('node_modules') !== -1;
+            }
+        })
     ],
     module: {
         rules: [

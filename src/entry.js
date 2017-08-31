@@ -1,6 +1,9 @@
 import React, {Component, PropTypes} from 'react'
 import ReactDOM from "react-dom";
-import "./asset/style.css";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import "./asset/common.css";
+import "./asset/app.css";
 class App extends Component {
     constructor(props) {
         super(props)
@@ -13,30 +16,14 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <div className="header">
-                    <div className="ui-w">
-                        <a href="/" className="logo"></a>
-                        <nav className="nav">
-                            <ul className="nav-internal">
-                                <li><a href="https://github.com/imoney-team/imoney">iMoney</a></li>
-                                <li><a href="https://github.com/imoney-team/imoney-react-ui">iMoney-React-UI</a></li>
-                                <li><a href="https://github.com/imoney-team/imoney-react-d3">iMoney-React-D3</a></li>
-                            </ul>
-                            <ul className="nav-external">
-                                <li><a href="https://github.com/imoney-team">Github</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+                <Header/>
                 <div className="hero">
                     <div className="ui-w">
                         <h1>iMoney</h1>
                         <h2>A JavaScript library for building user interfaces</h2>
                     </div>
                 </div>
-                <div className="footer">
-                    <p>Copyright © 2017 <a href="https://www.w3cmm.com/">w3cmm.com</a>.</p>
-                </div>
+                <Footer/>
             </div>
         )
     }

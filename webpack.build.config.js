@@ -8,7 +8,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     name: "dev",
     entry: {
-        app: [path.join(__dirname, "src", "entry.js")]
+        app: [path.join(__dirname, "src", "entry.js")],
+        demo: [path.join(__dirname, "src", "demo.js")]
     },
     output: {
         path: path.resolve(__dirname, "build"),
@@ -28,6 +29,28 @@ module.exports = {
                 removeComments: true,
                 keepClosingSlash: true,
                 collapseWhitespace: true
+            },
+            excludeChunks: ['demo']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'demo.html',
+            template: './src/asset/demo.html',
+            favicon: './src/asset/favicon.ico',
+            hash:true,
+            minify: {
+                minifyCSS: true,
+                minifyJS: true,
+                removeComments: true,
+                keepClosingSlash: true,
+                collapseWhitespace: true
+            },
+            excludeChunks: ['app']
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: function (module) {
+                // this assumes your vendor imports exist in the node_modules directory
+                return module.context && module.context.indexOf('node_modules') !== -1;
             }
         }),
 
@@ -49,13 +72,12 @@ module.exports = {
 
     ],
     module: {
-        rules: [
-            { // Disable webpack-dev-server's auto-reload feature in the browser.
+        rules: [{ // Disable webpack-dev-server's auto-reload feature in the browser.
                 test: path.resolve(__dirname, 'node_modules/webpack-dev-server/client'),
                 loader: 'null-loader'
             },
-            {test: /\.jpg$/, use: ["file-loader?name=images/[name].[ext]"]},
-            {test: /\.png$/, use: ["url-loader?name=images/[name].[ext]&limit=8192"]},
+            { test: /\.jpg$/, use: ["file-loader?name=images/[name].[ext]"] },
+            { test: /\.png$/, use: ["url-loader?name=images/[name].[ext]&limit=8192"] },
             {
                 test: /\.html$/,
                 use: [{
@@ -70,7 +92,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    use: 'css-loader'
+                    use: [{
+                        loader: 'css-loader',
+                        options: { minimize: true }
+                    }]
                 })
             },
             {
@@ -82,7 +107,7 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['es2015','react']
+                        presets: ['es2015', 'react']
                     }
                 }]
 
@@ -91,4 +116,3 @@ module.exports = {
         ]
     }
 }
-

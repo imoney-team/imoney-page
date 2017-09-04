@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Progress from "./components/progress";
 import CountUp from "./components/countUp";
 
 import "./asset/common.css";
@@ -35,12 +36,14 @@ class App extends Component {
                             <div>
                                 <ul>
                                     <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/progress">progress</Link></li>
                                     <li><Link to="/countUp">countUp</Link></li>
                                 </ul>
 
                                 <hr/>
 
                                 <Route exact path="/" component={Home}/>
+                                <Route path="/progress" component={Progress}/>
                                 <Route path="/CountUp" component={CountUp}/>
                             </div>
                         </Router>

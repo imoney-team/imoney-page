@@ -13,7 +13,7 @@ class App extends Component {
     render() {
         return (
             <div className="">
-                <CountUp className="CountUp" start={0} end={100} duration={3} ref={(countUp) => {
+                <CountUp className="countUp" start={0} end={100} duration={3} ref={(countUp) => {
                     this.myCountUp = countUp;
                 }}/>
                 <br/>

@@ -9,6 +9,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Progress from "./components/progress";
 import CountUp from "./components/countUp";
+import CountDown from "./components/countDown";
 import Clipboard from "./components/clipboard";
 
 import "./asset/common.css";
@@ -39,6 +40,7 @@ class App extends Component {
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/progress">progress</Link></li>
                                     <li><Link to="/countUp">countUp</Link></li>
+                                    <li><Link to="/countDown">countDown</Link></li>
                                     <li><Link to="/clipboard">clipboard</Link></li>
                                 </ul>
 
@@ -47,6 +49,7 @@ class App extends Component {
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/progress" component={Progress}/>
                                 <Route path="/countUp" component={CountUp}/>
+                                <Route path="/countDown" component={CountDown}/>
                                 <Route path="/clipboard" component={Clipboard}/>
                             </div>
                         </Router>

@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ReactDOM from "react-dom";
 import CountUp, {startAnimation} from "react-ui/src/all/countUp";
-
 class App extends Component {
     constructor(props) {
         super(props)

@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ReactDOM from "react-dom";
-import Clipboard from "imoney-react-ui/src/clipboard";
+import Clipboard from "react-ui/src/all/clipboard";
 
 class App extends Component {
     constructor(props) {

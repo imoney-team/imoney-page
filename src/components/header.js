@@ -16,12 +16,12 @@ class Header extends Component {
                     <a href="/" className="logo"></a>
                     <nav className="nav">
                         <ul className="nav-internal">
-                            <li><a href="https://github.com/imoney-team/imoney">iMoney</a></li>
-                            <li><a href="https://github.com/imoney-team/imoney-react-ui">iMoney-React-UI</a></li>
-                            <li><a href="https://github.com/imoney-team/imoney-react-d3">iMoney-React-D3</a></li>
+                            <li><a href="https://github.com/thunkli/imoney">iMoney</a></li>
+                            <li><a href="https://github.com/thunkli/react-ui">react-ui</a></li>
+                            <li><a href="https://github.com/thunkli/react-d3">react-d3</a></li>
                         </ul>
                         <ul className="nav-external">
-                            <li><a href="https://github.com/imoney-team">Github</a></li>
+                            <li><a href="https://github.com/thunkli/imoney-page">Github</a></li>
                         </ul>
                     </nav>
                 </div>

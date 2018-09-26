@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imoney-team/imoney-react.git"
+    "url": "git+https://github.com/thunkli/imoney-react.git"
   },
   "keywords": [
     "react"
   ],
   "bugs": {
-    "url": "https://github.com/imoney-team/imoney-react/issues"
+    "url": "https://github.com/thunkli/imoney-react/issues"
   },
-  "homepage": "https://github.com/imoney-team/imoney-react#readme",
+  "homepage": "https://github.com/thunkli/imoney-react#readme",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

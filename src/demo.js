@@ -19,7 +19,7 @@ const Home = () => (
     <div>
         <h2>Home page</h2>
     </div>
-)
+);
 class App extends Component {
     constructor(props) {
         super(props)

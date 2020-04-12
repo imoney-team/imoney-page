@@ -48,6 +48,6 @@
     "style-loader": "latest",
     "url-loader": "latest",
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^3.10.3"
   }
 }

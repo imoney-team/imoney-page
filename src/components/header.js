@@ -17,7 +17,7 @@ class Header extends Component {
                     <nav className="nav">
                         <ul className="nav-internal">
                             <li><a href="https://github.com/thunkli/imoney">iMoney</a></li>
-                            <li><a href="https://github.com/thunkli/react-ui">react-ui</a></li>
+                            <li><a href="https://github.com/thunkli/imoney-react-ui">imoney-react-ui</a></li>
                             <li><a href="https://github.com/thunkli/react-d3">react-d3</a></li>
                         </ul>
                         <ul className="nav-external">

@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import ReactDOM from "react-dom";
-import Progress from "react-ui/src/all/progress";
-import "react-ui/src/all/progress/style.css";
+import Progress from "imoney-react-ui/src/all/progress";
+import "imoney-react-ui/src/all/progress/style.css";
 Progress.configure({ showSpinner: false });
 class App extends Component {
     constructor(props) {

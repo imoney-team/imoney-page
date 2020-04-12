@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ReactDOM from "react-dom";
-import CountDown from "react-ui/src/all/countDown";
+import CountDown from "imoney-react-ui/src/all/countDown";
 
 class App extends Component {
     constructor(props) {

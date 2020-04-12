@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "build"),
-        publicPath: "/", //资源文件引用的目录
+        publicPath: "./", //资源文件引用的目录
         filename: "[name].bundle.min.js"
     },
     plugins: [
